@@ -26,7 +26,7 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
-        <div className="hidden md:float-left md:contents">
+        <div className="md:float-left md:contents">
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="absolute top-5 right-12  rounded-full p-1"
