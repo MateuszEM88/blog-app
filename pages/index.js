@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Categories, Post, Widget } from "../components/index.js";
+import { Categories, Post, Widget, Scroll } from "../components/index.js";
 
 import { getPosts } from "../components/services";
 
@@ -13,6 +13,7 @@ export default function Home({ posts }) {
       </Head>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <Scroll />
         <div className="grid xl:grid-cols-2 lg:col-span-8 gap-5 col-span-1">
           {posts.map((posts, index) => (
             <Post post={posts.node} key={index} />
