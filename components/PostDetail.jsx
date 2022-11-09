@@ -61,7 +61,7 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <div className="bg-containerBg text-justify hover:shadow-md dark:hover:shadow-md transition-shadow duration-300 dark:hover:shadow-indigo-900 dark:bg-containerDark shadow-lg border-2 border-gray dark:border-borderDark rounded-lg lg:p-8 pb-12 mb-8">
+    <div className="bg-containerBg text-justify hover:shadow-md dark:hover:shadow-md transition-shadow duration-300 dark:hover:shadow-indigo-900 dark:bg-containerDark shadow-lg border-2 border-gray dark:border-borderDark rounded-lg lg:p-8 pb-12 mt-4 mb-8">
       <Scroll />
       <div className="relative overflow-hidden shadow-md mb-6">
         <img
