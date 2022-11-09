@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Scroll from "./Scroll";
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -61,6 +62,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <div className="bg-containerBg text-justify hover:shadow-md dark:hover:shadow-md transition-shadow duration-300 dark:hover:shadow-indigo-900 dark:bg-containerDark shadow-lg border-2 border-gray dark:border-borderDark rounded-lg lg:p-8 pb-12 mb-8">
+      <Scroll />
       <div className="relative overflow-hidden shadow-md mb-6">
         <img
           src={post.image.url}

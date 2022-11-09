@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment/moment";
 import Link from "next/link";
-import Categories from "./Categories";
 
 const Post = ({ post }) => {
   return (
@@ -10,7 +9,7 @@ const Post = ({ post }) => {
         <img
           src={post.image?.url}
           alt={post.title}
-          className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
+          className="object-top absolute h-60 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
         />
       </div>
       <h1 className="transition duration-700 text-center text-primaryText dark:text-darkText mb-4 cursor-pointer hover:text-indigo-600 dark:hover:text-indigo-300 text-2xl font-semibold">
@@ -19,7 +18,7 @@ const Post = ({ post }) => {
       <p className="text-center text-lg text-primaryText h-14 overflow-hidden dark:text-darkText font-formal px-4 mb-8">
         {post.text}
       </p>
-      <div className="flex items-center justify-around mb-8 w-full">
+      <div className="flex items-center justify-around mb-4 w-full">
         <div className="flex item-center justify-center mb-4 w-full w-auto ">
           <img
             className="align-middle "

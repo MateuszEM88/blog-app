@@ -7,3 +7,4 @@ export { default as Navbar } from "./Navbar";
 export { default as Post } from "./Post";
 export { default as PostDetail } from "./PostDetail";
 export { default as Widget } from "./Widget";
+export { default as Scroll } from "./Scroll";

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+
 import { getCategories } from "./services";
 import { useTheme } from "next-themes";
 import sun from "../components/img/sun.png";
@@ -17,7 +18,7 @@ const Navbar = () => {
   // }, []);
 
   return (
-    <div className="mb-8 w-100 sticky top-0 z-10  bg-indigo-400 bg-opacity-50 backdrop-blur bg-containerBg dark:bg-containerDark border-b-2 dark:border-borderDark dark:bg-opacity-50 py-6  ">
+    <div className="mb-2 w-100 sticky top-0 z-10  bg-indigo-400 bg-opacity-50 backdrop-blur bg-containerBg dark:bg-containerDark border-b-2 dark:border-borderDark dark:bg-opacity-50 py-6  ">
       <div className="w-full inline-block">
         <div className="md:float-left block ml-16">
           <Link href="/">
