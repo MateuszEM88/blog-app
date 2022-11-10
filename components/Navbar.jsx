@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="md:float-left  md:contents">
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className={`absolute right-1/3 top-5 md:top-5 z-30 md:right-12  rounded-full p-1 ${
+            className={`absolute right-1/2 top-5 md:top-5 z-30 md:right-12  rounded-full p-1 ${
               open ? "flex" : "max-md:hidden"
             }`}
           >
@@ -50,7 +50,7 @@ const Navbar = () => {
             <Hamburger color="#06b6d4" />
           </div>
           <div
-            className={`fixed md:hidden backdrop-blur transform duration-700 flex flex-col bg-containerDark  right-0 top-0 w-1/2 h-screen justify-center text-center ${
+            className={`fixed md:hidden backdrop-blur transform duration-700 flex flex-col bg-containerDark  right-0 top-0 w-2/3 h-screen justify-center text-center ${
               open ? "flex" : "-translate-y-full"
             }`}
           >
