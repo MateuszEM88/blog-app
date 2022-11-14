@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="md:float-left  md:contents">
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className={`absolute right-1/2 top-5 md:top-5 z-30 md:right-12  rounded-full p-1 ${
+            className={`absolute right-1/2 top-5 md:top-6 z-30 md:right-12  rounded-full p-1 ${
               open ? "flex" : "max-md:hidden"
             }`}
           >
