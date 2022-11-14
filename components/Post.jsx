@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Post = ({ post }) => {
   return (
-    <div className="transition-shadow text-justify duration-300 dark:hover:shadow-indigo-900 bg-containerBg dark:bg-containerDark border-2 border-gray dark:border-borderDark hover:shadow-lg dark:hover:shadow-md  rounded-lg p-0 lg:p-4 pb-12 mb-12">
+    <div className="transition-shadow text-justify duration-300 dark:hover:shadow-indigo-900 bg-containerBg dark:bg-containerDark border-2 border-gray dark:border-borderDark hover:shadow-lg dark:hover:shadow-md  rounded-lg p-0 lg:p-4 pb-12 mb-6">
       <div className="relative overflow-hidden shadow-md pb-60 mb-4">
         <img
           src={post.image?.url}
