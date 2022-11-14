@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import menu from "./img/menu.png";
-import cross from "./img/cross.png";
+
 import { getCategories } from "./services";
 import { useTheme } from "next-themes";
 import sun from "../components/img/sun.png";
@@ -26,7 +25,7 @@ const Navbar = () => {
         <div className="md:float-left block ml-16">
           <Link href="/">
             <span className="transition duration-700 cursor-pointer font-bold text-darkText hover:text-indigo-200 text-xl ">
-              rozprogramowany.musk
+              rozprogramowany.dev
             </span>
           </Link>
         </div>
@@ -47,7 +46,7 @@ const Navbar = () => {
             onClick={() => setOpen(!open)}
             className="absolute right-4 z-20 top-4 md:hidden"
           >
-            <Hamburger color="#06b6d4" />
+            <Hamburger toggled={open} toggle={setOpen} color="#06b6d4" />
           </div>
           <div
             className={`fixed md:hidden backdrop-blur transform duration-700 flex flex-col bg-containerDark  right-0 top-0 w-2/3 h-screen justify-center text-center ${
@@ -60,7 +59,7 @@ const Navbar = () => {
                 key={index}
                 href={`/category/${category.slug}`}
               >
-                <ul className=" text-darkText font-semibold text-xl w-full p-2">
+                <ul className="flex-start text-darkText font-semibold text-3xl w-full p-2">
                   <li className="">{category.name}</li>
                 </ul>
               </Link>
