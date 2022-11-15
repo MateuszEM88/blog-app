@@ -4,16 +4,13 @@ class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const originalRenderPage = ctx.renderPage;
 
-    // Run the React rendering logic synchronously
     ctx.renderPage = () =>
       originalRenderPage({
-        // Useful for wrapping the whole react tree
         enhanceApp: (App) => App,
-        // Useful for wrapping in a per-page basis
+
         enhanceComponent: (Component) => Component,
       });
 
-    // Run the parent `getInitialProps`, it now includes the custom `renderPage`
     const initialProps = await Document.getInitialProps(ctx);
 
     return initialProps;
@@ -44,7 +41,6 @@ const themeInitializerScript = `(function() {
 `;
 
 function setInitialColorMode() {
-  // Check initial color preference
   function getInitialColorMode() {
     const persistedPreferenceMode = window.localStorage.getItem("theme");
     const hasPersistedPreference = typeof persistedPreferenceMode === "string";
@@ -53,7 +49,6 @@ function setInitialColorMode() {
       return persistedPreferenceMode;
     }
 
-    // Check the current preference
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
     const hasMediaQueryPreference = typeof preference.matches === "boolean";
 
@@ -68,7 +63,6 @@ function setInitialColorMode() {
   const element = document.documentElement;
   element.style.setProperty("--initial-color-mode", currentColorMode);
 
-  // If darkmode apply darkmode
   if (currentColorMode === "dark")
     document.documentElement.setAttribute("data-theme", "dark");
 }
