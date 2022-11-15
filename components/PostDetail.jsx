@@ -18,6 +18,9 @@ const PostDetail = ({ post }) => {
       if (obj.underline) {
         modifiedText = <u key={index}>{text}</u>;
       }
+      if (obj.code) {
+        modifiedText = <code key={index}>{text}</code>;
+      }
     }
 
     switch (type) {
@@ -37,6 +40,30 @@ const PostDetail = ({ post }) => {
             ))}
           </p>
         );
+      case "heading-one":
+        return (
+          <h1 key={index} className="text-md font-semibold mb-4">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h1>
+        );
+      case "heading-two":
+        return (
+          <h2 key={index} className="text-md font-semibold mb-4">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h2>
+        );
+      case "heading-three":
+        return (
+          <h3 key={index} className="text-md font-semibold mb-4">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h3>
+        );
       case "heading-four":
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
@@ -45,6 +72,15 @@ const PostDetail = ({ post }) => {
             ))}
           </h4>
         );
+      case "block-quote":
+        return (
+          <blockquote key={index} className="whitespace-pre-wrap">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </blockquote>
+        );
+
       case "image":
         return (
           <img
