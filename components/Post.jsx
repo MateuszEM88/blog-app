@@ -14,10 +14,7 @@ const Post = ({ post }) => {
       </div>
       <h1 className="transition duration-700 text-center text-primaryText dark:text-darkText mb-4 cursor-pointer hover:text-indigo-600 dark:hover:text-indigo-300 text-2xl font-semibold">
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
-      </h1>
-//       <p className="text-center text-lg text-primaryText h-14 overflow-hidden dark:text-darkText font-formal px-4 mb-8">
-//         {post.text}
-//       </p>
+      </h1> 
       <div className="flex items-center justify-around mb-4 w-full">
         <div className="flex item-center justify-center mb-4 w-full w-auto ">
           <img
