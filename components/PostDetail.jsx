@@ -122,7 +122,7 @@ const PostDetail = ({ post }) => {
           </div>
           <div className="font-medium mb-4 pt-4 ml-6 text-gray-700  h-12 w-44">
             <span className="text-primaryText dark:text-darkText">
-              {moment(post.createdAT).format("DD-MM-YYYY")}
+              {moment(post.createdAt).format("DD-MM-YYYY")}
             </span>
           </div>
         </div>
