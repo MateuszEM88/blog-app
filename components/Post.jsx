@@ -2,18 +2,38 @@ import React from "react";
 import moment from "moment/moment";
 import Link from "next/link";
 
-const Post = ({ post }) => {
+const Post = ({ post, currentPage }) => {
+  console.log(post);
   return (
-    <div className=" bg-containerBg dark:bg-containerDark p-0 lg:p-4 mb-16 ">
+    <div
+      className={`post lg:col-span-2 
+      ${currentPage === 1 ? "lg:[&:nth-child(1)]:col-span-6" : ""} 
+      ${currentPage === 1 ? "lg:[&:nth-child(2)]:col-span-3" : ""} 
+      ${currentPage === 1 ? "lg:[&:nth-child(3)]:col-span-3" : ""}  
+       p-0 lg:p-4 mb-16 `}
+    >
       <div className="relative overflow-hidden shadow-md pb-60 mb-4">
         <img
           src={post.image?.url}
           alt={post.title}
           className="object-top absolute h-60 w-full object-cover"
         />
+        <div className="bottom-0 absolute">
+          {post.categories.map((category) => {
+            return (
+              <Link
+                className="text-xl mr-2 bg-fuchsia-500 p-1 text-white"
+                href={`/category/${category.slug}`}
+                key={category.slug}
+              >
+                {category.name}
+              </Link>
+            );
+          })}
+        </div>
       </div>
       <div className="flex flex-col justify-between">
-        <h1 className="transition duration-700 text-primaryText dark:text-darkText mb-4 cursor-pointer hover:text-indigo-600 dark:hover:text-indigo-300 text-2xl font-semibold">
+        <h1 className="transition duration-700 text-primaryText dark:text-darkText mb-4 cursor-pointer hover:text-fuchsia-600 dark:hover:text-fuchsia-300 text-2xl font-semibold">
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
         <p>{post.text}</p>
@@ -37,9 +57,11 @@ const Post = ({ post }) => {
         </div> */}
         </div>
 
-        <div className="text-center pb-4">
+        <div className="text-center p-4 ">
           <Link href={`/post/${post.slug}`}>
-            <p className="font-semibold">Czytaj dalej...</p>
+            <button className="font-semibold p-2 hover:text-fuchsia-500 hover:scale-125  duration-300">
+              Czytaj dalej...
+            </button>
           </Link>
         </div>
       </div>

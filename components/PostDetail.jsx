@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Scroll from "./Scroll";
+import Link from "next/link";
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -97,11 +98,25 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-containerBg text-justify dark:bg-containerDark  lg:p-8 pb-12 mt-8 mb-8">
+    <div className="flex flex-col items-center justify-center  text-justify   lg:p-8 pb-12 mt-8 mb-8">
       <Scroll />
+      <div className="mb-2">
+        {post.categories.map((category) => {
+          return (
+            <Link
+              className="lg:text-xl mr-2 bg-fuchsia-500 p-1 text-white"
+              href={`/category/${category.slug}`}
+              key={category.slug}
+            >
+              {category.name}
+            </Link>
+          );
+        })}
+      </div>
       <h1 className="mb-8 px-4  lg:w-1/2 text-primaryText text-center dark:text-darkText text-3xl lg:text-5xl font-semibold">
         {post.title}
       </h1>
+
       <div className="px-4 lg:px-4">
         <div className="flex items-center justify-around mb-8 w-full">
           <div className="flex justify-center item-center  mb-4  w-full">

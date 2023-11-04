@@ -13,10 +13,13 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="   rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl text-primaryText dark:text-darkText mb-8 font-semibold border-b pb-4">
-        Kategorie
-      </h3>
+    <div className=" flex content-center rounded-lg ">
+      <button
+        className=" p-2 text-xl font-semibold m-2 
+          "
+      >
+        Kategorie:
+      </button>
       {categories.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
           <button
