@@ -17,6 +17,7 @@ export const getPosts = async () => {
               }
             }
             createdAt
+            featuredPost
             slug
             title
             text

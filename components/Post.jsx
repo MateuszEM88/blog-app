@@ -2,17 +2,18 @@ import React from "react";
 import moment from "moment/moment";
 import Link from "next/link";
 
-const Post = ({ post, currentPage }) => {
-  console.log(post);
+const Post = ({ post, currentPage, featuredPost }) => {
   return (
     <div
       className={`post lg:col-span-2 
+      ${featuredPost ? "lg:col-span-3" : ""} 
       ${currentPage === 1 ? "lg:[&:nth-child(1)]:col-span-6" : ""} 
       ${currentPage === 1 ? "lg:[&:nth-child(2)]:col-span-3" : ""} 
       ${currentPage === 1 ? "lg:[&:nth-child(3)]:col-span-3" : ""}  
+      
        p-0 lg:p-4 mb-16 `}
     >
-      <div className="relative overflow-hidden shadow-md pb-60 mb-4">
+      <div className="relative  overflow-hidden pb-60 mb-4">
         <img
           src={post.image?.url}
           alt={post.title}

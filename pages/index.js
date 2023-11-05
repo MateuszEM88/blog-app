@@ -11,6 +11,8 @@ export default function Home({ posts }) {
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPosts = posts.reverse().slice(firstPostIndex, lastPostIndex);
   const lastPosiblePage = Math.ceil(posts.length / postPerPage);
+  const featuredPosts = posts.filter((post) => post.node.featuredPost);
+  console.log(featuredPosts);
 
   const previousPage = () => {
     if (currentPage !== 1) {
@@ -43,6 +45,22 @@ export default function Home({ posts }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:px-[5vw]">
         {/* <Scroll /> */}
         {/* <Categories /> */}
+        <h1 className="col-span-1 md:col-span-2 lg:col-span-6 border-b-2 text-lg font-semibold">
+          Polecane posty
+        </h1>
+        <div className="post-container grid md:grid-cols-2 lg:grid-cols-6 lg:col-span-12  gap-5 col-span-1">
+          {featuredPosts.map((posts, index) => (
+            <Post
+              className="recent"
+              post={posts.node}
+              key={index}
+              featuredPost={featuredPosts}
+            />
+          ))}
+        </div>
+        <h1 className="col-span-1 md:col-span-2 lg:col-span-6 border-b-2 text-lg font-semibold">
+          Ostatnie posty
+        </h1>
         <div className="post-container grid md:grid-cols-2 lg:grid-cols-6 lg:col-span-12  gap-5 col-span-1">
           {currentPosts.map((posts, index) => (
             <Post
