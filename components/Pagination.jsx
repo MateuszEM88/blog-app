@@ -9,6 +9,7 @@ const Pagination = ({
   nextPage,
   firstPage,
   lastPage,
+  lastPosiblePage,
 }) => {
   let pages = [];
 
@@ -17,7 +18,11 @@ const Pagination = ({
   }
 
   return (
-    <div className="flex lg:col-span-12 justify-center">
+    <div
+      className={`flex lg:col-span-12 justify-center ${
+        lastPosiblePage === 1 ? "hidden" : ""
+      }`}
+    >
       <button
         className={`flex justify-center items-center m-1 lg:m-2 border-2 p-2  h-8  lg:h-12 rounded-md `}
         onClick={firstPage}

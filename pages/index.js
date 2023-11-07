@@ -12,7 +12,7 @@ export default function Home({ posts }) {
   const currentPosts = posts.reverse().slice(firstPostIndex, lastPostIndex);
   const lastPosiblePage = Math.ceil(posts.length / postPerPage);
   const featuredPosts = posts.filter((post) => post.node.featuredPost);
-  console.log(featuredPosts);
+  console.log(lastPosiblePage);
 
   const previousPage = () => {
     if (currentPage !== 1) {
@@ -80,6 +80,7 @@ export default function Home({ posts }) {
           nextPage={nextPage}
           firstPage={firstPage}
           lastPage={lastPage}
+          lastPosiblePage={lastPosiblePage}
         />
 
         {/* <div className="lg:col-span-4  col-span-1">

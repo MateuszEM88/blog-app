@@ -5,7 +5,7 @@ import { Post, Categories } from "../../components/index.js";
 
 const CategoryPost = ({ posts }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(4);
+  const [postPerPage, setPostPerPage] = useState(6);
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentCategoryPosts = posts
@@ -52,6 +52,7 @@ const CategoryPost = ({ posts }) => {
           nextPage={nextPage}
           firstPage={firstPage}
           lastPage={lastPage}
+          lastPosiblePage={lastPosiblePage}
         />
         {/* <div className="col-span-1 lg:col-span-4"> */}
         {/* <div className="relative lg:sticky top-8"> */}
