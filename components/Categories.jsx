@@ -14,20 +14,23 @@ const Categories = () => {
 
   return (
     <div className=" flex content-center rounded-lg ">
-      <button
-        className=" p-2 text-xl font-semibold m-2 
+      <p
+        className=" p-2 text-xl dark:text-darkText font-semibold m-2 
           "
       >
         Kategorie:
-      </button>
+      </p>
       {categories.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
-          <button
-            className=" p-2 rounded-lg text-gray-100 bg-indigo-600 hover:bg-indigo-800 m-2 
+          <p
+            className="p-2 text-xl dark:text-darkText font-semibold m-2  
           "
           >
-            {category.name}
-          </button>
+            <span className="text-fuchsia-500">#</span>
+            <span className="hover:border-b-2 pb-1 hover:border-fuchsia-500">
+              {category.name}
+            </span>
+          </p>
         </Link>
       ))}
     </div>

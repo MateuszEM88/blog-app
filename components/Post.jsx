@@ -13,28 +13,28 @@ const Post = ({ post, currentPage, featuredPost }) => {
       
        p-0 lg:p-4 mb-16 `}
     >
-      <div className="relative  overflow-hidden pb-60 mb-4">
+      <div className="relative  overflow-hidden pb-60">
         <img
           src={post.image?.url}
           alt={post.title}
           className="object-top absolute h-60 w-full object-cover"
         />
-        <div className="bottom-0 absolute">
-          {post.categories.map((category) => {
-            return (
-              <Link
-                className="text-xl mr-2 bg-fuchsia-500 p-1 text-white"
-                href={`/category/${category.slug}`}
-                key={category.slug}
-              >
-                {category.name}
-              </Link>
-            );
-          })}
-        </div>
       </div>
-      <div className="flex flex-col justify-between">
-        <h1 className="transition duration-700 text-primaryText dark:text-darkText mb-4 cursor-pointer hover:text-fuchsia-600 dark:hover:text-fuchsia-300 text-2xl font-semibold">
+      <div className="my-2">
+        {post.categories.map((category) => {
+          return (
+            <Link
+              className="text-md mr-2 text-fuchsia-500 font-semibold"
+              href={`/category/${category.slug}`}
+              key={category.slug}
+            >
+              #{category.name}
+            </Link>
+          );
+        })}
+      </div>
+      <div className="flex flex-col justify-between text-primaryText dark:text-darkText">
+        <h1 className="transition duration-700  mb-4 cursor-pointer hover:text-fuchsia-600 dark:hover:text-fuchsia-300 text-2xl font-semibold">
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
         <p>{post.text}</p>

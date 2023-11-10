@@ -42,23 +42,31 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:px-[5vw]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:px-24 text-primaryText dark:text-darkText">
         {/* <Scroll /> */}
         {/* <Categories /> */}
-        <h1 className="col-span-1 md:col-span-2 lg:col-span-6 border-b-2 text-lg font-semibold">
+        <h1
+          className={`col-span-1 md:col-span-2 lg:col-span-6 border-b-2 dark:border-darkText text-lg font-semibold ${
+            currentPage != 1 ? "hidden" : ""
+          }`}
+        >
           Polecane posty
         </h1>
-        <div className="post-container grid md:grid-cols-2 lg:grid-cols-6 lg:col-span-12  gap-5 col-span-1">
+        <div
+          className={`post-container grid md:grid-cols-2 lg:grid-cols-6 lg:col-span-12  gap-5 col-span-1 ${
+            currentPage != 1 ? "hidden" : ""
+          }`}
+        >
           {featuredPosts.map((posts, index) => (
             <Post
-              className="recent"
+              className="featured"
               post={posts.node}
               key={index}
               featuredPost={featuredPosts}
             />
           ))}
         </div>
-        <h1 className="col-span-1 md:col-span-2 lg:col-span-6 border-b-2 text-lg font-semibold">
+        <h1 className="col-span-1 md:col-span-2 lg:col-span-6 border-b-2 text-lg font-semibold dark:border-darkText">
           Ostatnie posty
         </h1>
         <div className="post-container grid md:grid-cols-2 lg:grid-cols-6 lg:col-span-12  gap-5 col-span-1">

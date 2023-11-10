@@ -98,8 +98,7 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  text-justify   lg:p-8 pb-12 mt-8 mb-8">
-      <Scroll />
+    <div className="flex flex-col items-center justify-center dark:text-darkText  text-justify   lg:p-8 pb-12 mt-8 mb-8">
       <div className="mb-2">
         {post.categories.map((category) => {
           return (
