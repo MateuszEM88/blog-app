@@ -42,7 +42,7 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:px-24 text-primaryText dark:text-darkText">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:px-16 text-primaryText dark:text-darkText">
         {/* <Scroll /> */}
         {/* <Categories /> */}
         <h1

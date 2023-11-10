@@ -5,7 +5,7 @@ import Link from "next/link";
 const Post = ({ post, currentPage, featuredPost }) => {
   return (
     <div
-      className={`post lg:col-span-2 
+      className={`post group lg:col-span-2 
       ${featuredPost ? "lg:col-span-3" : ""} 
       ${currentPage === 1 ? "lg:[&:nth-child(1)]:col-span-6" : ""} 
       ${currentPage === 1 ? "lg:[&:nth-child(2)]:col-span-3" : ""} 
@@ -13,12 +13,13 @@ const Post = ({ post, currentPage, featuredPost }) => {
       
        p-0 lg:p-4 mb-16 `}
     >
-      <div className="relative  overflow-hidden pb-60">
+      <div className="relative  overflow-hidden pb-60 rounded-xl border-2 border-fuchsia-600">
         <img
           src={post.image?.url}
           alt={post.title}
-          className="object-top absolute h-60 w-full object-cover"
+          className="object-top absolute h-60 w-full object-cover  group-hover:scale-125 duration-500"
         />
+        <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fuchsia-400 bg-fixed opacity-20 transition duration-300 ease-in-out group-hover:opacity-0"></div>
       </div>
       <div className="my-2">
         {post.categories.map((category) => {
@@ -62,7 +63,7 @@ const Post = ({ post, currentPage, featuredPost }) => {
           <Link href={`/post/${post.slug}`}>
             <button className="font-semibold p-2 hover:text-fuchsia-500 hover:scale-125  duration-300">
               Czytaj dalej...
-            </button>
+            </button>{" "}
           </Link>
         </div>
       </div>

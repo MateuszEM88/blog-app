@@ -20,11 +20,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="mb-2 w-100 sticky top-0 z-10 bg-opacity-90  backdrop-blur bg-containerDark border-b-2 dark:border-borderDark  py-6  ">
+    <div className="mb-2 w-100 sticky top-0 z-10 bg-opacity-90  backdrop-blur bg-containerDark border-b-2 border-fuchsia-600  py-6  ">
       <div className="w-full inline-block">
         <div className="md:float-left block ml-2 lg:ml-16">
           <Link href="/">
-            <span className="transition duration-700 cursor-pointer font-bold text-darkText hover:text-indigo-200 text-xl ">
+            <span className="transition duration-700 cursor-pointer font-bold text-fuchsia-600 hover:text-indigo-200 text-xl ">
               rozprogramowany.dev
             </span>
           </Link>
